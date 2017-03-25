@@ -4,7 +4,7 @@
       <ul class="sidebar-menu">
           <li class="active">
               <a class="" href="#">
-                  <i class="fa fa-home"></i>
+                  <i class="fa fa-home" aria-hidden="true"></i>
                   <span>Dashboard</span>
               </a>
           </li>
