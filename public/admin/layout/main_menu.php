@@ -3,31 +3,31 @@
       <!-- sidebar menu start-->
       <ul class="sidebar-menu">
           <li class="active">
-              <a class="" href="#">
+              <a class="" href="?page=dashboard">
                   <i class="fa fa-home" aria-hidden="true"></i>
                   <span>Dashboard</span>
               </a>
           </li>
           <li>
-              <a class="" href="#">
+              <a class="" href="?page=view_order">
                   <i class="fa fa-file" aria-hidden="true"></i>
                   <span>View order</span>
               </a>
           </li>
           <li>
-              <a class="" href="#">
+              <a class="" href="?page=process_order">
                   <i class="fa fa-tasks" aria-hidden="true"></i>
                   <span>Process Order</span>
               </a>
           </li>
           <li>
-              <a class="" href="#">
+              <a class="" href="?page=deliver">
                   <i class="fa fa-envelope" aria-hidden="true"></i>
                   <span>Deliver Transcript</span>
               </a>
           </li>
           <li>
-              <a class="" href="#">
+              <a class="" href="?page=generate">
                   <i class="fa fa-bar-chart"></i>
                   <span>Generate Report</span>
               </a>
