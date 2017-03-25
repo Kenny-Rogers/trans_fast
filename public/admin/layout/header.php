@@ -15,9 +15,10 @@
     <link href="../css/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="../css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="../css/font-awesome.min.css" rel="stylesheet" />
-    <!-- full calendar css-->
+    <!--link href="../css/font-awesome.min.css" rel="stylesheet" />
+    < full calendar css-->
     <link href="../assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
 	<link href="../assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
     <!-- easy pie chart-->
