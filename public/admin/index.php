@@ -1,6 +1,5 @@
-<?php
-  include('../../includes/page_loader.php');
-  include('layout/header.php'); ?>
+<?php include('../../includes/page_loader.php'); ?>
+<?php include('layout/header.php'); ?>
 <body>
  <!-- container section start -->
  <section id="container" class="">
