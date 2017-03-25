@@ -23,10 +23,10 @@
                   <ul class="dropdown-menu extended logout">
                       <div class="log-arrow-up"></div>
                       <li>
-                          <a href="#"><i class="icon_chat_alt"></i> Settings</a>
+                          <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a>
                       </li>
                       <li>
-                          <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+                          <a href="login.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
                       </li>
                   </ul>
               </li>
