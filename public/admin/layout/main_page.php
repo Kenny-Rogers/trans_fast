@@ -10,7 +10,7 @@
     </ol>
   </div>
 </div>
-
+      <!-- displays the requested page -->
       <?php include("{$view}"); ?>
     </section>
 </section>
