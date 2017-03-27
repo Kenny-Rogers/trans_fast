@@ -33,5 +33,15 @@ class Applicant{
     //TODO:: continue
   }
 
+  //display fullname
+  public function fullname(){
+    if(isset($this->first_name)&&isset($this->last_name)
+      ||isset($this->middle_name)){
+      return $this->last_name." ".$this->first_name;
+    }else{
+      return "";
+    }
+  }
+
 }
 ?>
