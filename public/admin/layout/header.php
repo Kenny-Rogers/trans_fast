@@ -33,6 +33,7 @@
     <link href="../css/style-responsive.css" rel="stylesheet" />
 	<link href="../css/xcharts.min.css" rel=" stylesheet">
 	<link href="../css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+  <script src="../js/javascripts.js"></script>
     <!-- =======================================================
         Theme Name: NiceAdmin
         Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
