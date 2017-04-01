@@ -2,7 +2,7 @@
 <?php
 //page for finding and displaying the list
 //corresponding to the selected values
-$process_page = "pages/view_order/display_list.php";
+$process_page = "pages/general/display_list.php";
 ?>
 
 <form class="form-horizontal">
