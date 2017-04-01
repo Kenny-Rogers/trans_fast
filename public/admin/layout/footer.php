@@ -1,7 +1,7 @@
 
     <!-- javascripts -->
     <script src="../js/jquery.js"></script>
-	<script src="../js/jquery-ui-1.10.4.min.js"></script>
+	   <script src="../js/jquery-ui-1.10.4.min.js"></script>
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../js/jquery-ui-1.9.2.custom.min.js"></script>
     <!-- bootstrap -->
@@ -18,7 +18,7 @@
     <<script src="../js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
 	<script src="../assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
     <!--script for this page only-->
-    <script src="../js/calendar-custom.js"></script>  
+    <script src="../js/calendar-custom.js"></script>
 	<script src="../js/jquery.rateit.min.js"></script>
     <!-- custom select -->
     <script src="../js/jquery.customSelect.min.js" ></script>
