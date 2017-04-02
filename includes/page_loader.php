@@ -1,4 +1,5 @@
 <?php
+  include('initialize.php');
   //IF first time::get the page clicked on
   //ELSE :: set to default
   $display = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
