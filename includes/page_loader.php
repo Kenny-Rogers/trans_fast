@@ -12,6 +12,7 @@
       $view = "pages/view_order/display_orders.php";
       $page_title = "View Order";
       $title_class = "fa fa-file";
+      $class_v = "class='active'";
       break;
 
     case 'process_order':
@@ -19,6 +20,7 @@
       $view = "pages/process/process_order.php";
       $page_title = "Process Order";
       $title_class = "fa fa-tasks";
+      $class_p = "class='active'";
       break;
 
     case 'generate':
@@ -26,12 +28,14 @@
       $view = "pages/generate/summary.php";
       $page_title = "Generate";
       $title_class = "fa fa-laptop";
+      $class_g = "class='active'";
       break;
 
     case 'deliver':
       $view = "pages/deliver/deliver_trans.php";
       $page_title = "Deliver";
       $title_class = "fa fa-envelope";
+      $class_d = "class='active'";
       break;
 
     case 'dashboard':
@@ -39,12 +43,14 @@
       $view = "pages/generate/summary.php";
       $page_title = "Dashboard";
       $title_class = "fa fa-laptop";
+      $class_da = "class='active'";
       break;
 
     default:
       $view = "pages/generate/summary.php";
       $page_title = "Dashboard";
       $title_class = "fa fa-laptop";
+      $class_da = "class='active'";
       break;
   }
 ?>
