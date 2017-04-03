@@ -38,6 +38,13 @@
       $class_d = "class='active'";
       break;
 
+    case 'create':
+        $view = "pages/process/create_transcript.php";
+        $page_title = "Creating Transcript";
+        $title_class = "fa fa-plus";
+        $class_p = "class='active'";
+        break;
+
     case 'dashboard':
       //display summary report
       $view = "pages/generate/summary.php";
