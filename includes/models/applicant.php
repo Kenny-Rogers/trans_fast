@@ -3,10 +3,11 @@
 class Applicant extends DatabaseObject{
   protected static $table_name = "admin";
   protected static $db_fields =
-    array("school_id", "first_name", "last_name", "password", "email",
+    array("Id", "school_id", "first_name", "last_name", "password", "email",
           "telephone", "mode_of_delivery", "pace_of_processing", "date_applied",
           "date_delivered", "status");
-  public $school_id;
+  public $Id;
+  protected $school_id;
   protected $first_name;
   protected $last_name;
   protected $middle_name;
@@ -89,7 +90,8 @@ class Applicant extends DatabaseObject{
               AND pace_of_processing='$check1'";
     } elseif (( $check2 == "Null" ) && (( $check1 == "express" ) || ( $check1 == "normal" ))){
       //for EXPRESS OR NORMAL Applicants
-      $sql = "SELECT * FROM applicant WHERE pace_of_processing='$check1'";
+      $sql = "SELECT * FROM applicant WHERE pace_of_processing='$check1' AND
+      Id IN (SELECT paid_by FROM payment)";
     } elseif (( $check1 == "paid" ) && ( $check2 == "Null" )){
       //for PAID Applicants
       $sql = "SELECT * FROM applicant WHERE Id IN (SELECT paid_by FROM payment)";
@@ -98,13 +100,47 @@ class Applicant extends DatabaseObject{
       $sql = "SELECT * FROM applicant WHERE Id NOT IN (SELECT paid_by FROM payment)";
     } elseif ((( $check1 == "ems" ) || ( $check1 == "pick_up" ) || ( $check1 == "email" )) && ( $check2 == "Null" )){
       //for various delivery types
-      $sql = "SELECT * FROM applicant WHERE Id IN (SELECT appl_id FROM receipient WHERE mode_of_delivery='$check1')";
+      $sql = "SELECT * FROM applicant WHERE Id IN (SELECT appl_id FROM recipient WHERE mode_of_delivery='$check1')";
     } else {
       //default
       $sql = "SELECT * FROM applicant ";
     }
 
     return $sql;
+  }
+
+  public static function find_next_page($check1 = "", $check2 = ""){
+    //returns the next page to go
+    $next_page = "";
+    if (( $check1 == "paid" ) && (( $check2 == "express" ) || ( $check2 == "normal" ))){
+      //for PAID Applicants EXPRESS OR NORMAL
+      $next_page = "#";
+    } elseif (( $check1 == "not_paid" ) && (( $check2 == "express" ) || ( $check2 == "normal" ))){
+      //for NOT_PAID Applicants EXPRESS OR NORMAL
+      $next_page = "#";
+    } elseif (( $check2 == "not_paid" ) && (( $check1 == "express" ) || ( $check1 == "normal" ))){
+      //for EXPRESS OR NORMAL Applicants NOT_PAID
+      $next_page = "#";
+    } elseif (( $check2 == "paid" ) && (( $check1 == "express" ) || ( $check1 == "normal" ))){
+      //for EXPRESS OR NORMAL Applicants NOT_PAID
+      $next_page = "#";
+    } elseif (( $check2 == "Null" ) && (( $check1 == "express" ) || ( $check1 == "normal" ))){
+      //for EXPRESS OR NORMAL Applicants
+      $next_page = "create";
+    } elseif (( $check1 == "paid" ) && ( $check2 == "Null" )){
+      //for PAID Applicants
+      $next_page = "#";
+    } elseif (( $check1 == "not_paid" ) && ( $check2 == "Null" )){
+      //for  NOT_PAID Applicants
+      $next_page = "#";
+    } elseif ((( $check1 == "ems" ) || ( $check1 == "pick_up" ) || ( $check1 == "email" )) && ( $check2 == "Null" )){
+      //for various delivery types
+      $next_page = "#";
+    } else {
+      //default
+      $next_page = "#";
+    }
+    return $next_page;
   }
 }
 ?>
