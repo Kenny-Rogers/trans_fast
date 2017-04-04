@@ -1,8 +1,9 @@
-<?php
+<?php session_start();
   include('initialize.php');
   //IF first time::get the page clicked on
   //ELSE :: set to default
   $display = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
+  $_SESSION['display'] = $display;
   $view = "";
 
   switch ($display) {
@@ -34,6 +35,13 @@
     case 'deliver':
       $view = "pages/deliver/deliver_trans.php";
       $page_title = "Deliver";
+      $title_class = "fa fa-envelope";
+      $class_d = "class='active'";
+      break;
+
+    case 'send':
+      $view = "pages/deliver/send_trans.php";
+      $page_title = "Delivering Transcript";
       $title_class = "fa fa-envelope";
       $class_d = "class='active'";
       break;
