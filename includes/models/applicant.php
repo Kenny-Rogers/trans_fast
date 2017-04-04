@@ -115,16 +115,20 @@ class Applicant extends DatabaseObject{
     if (( $check1 == "paid" ) && (( $check2 == "express" ) || ( $check2 == "normal" ))){
       //for PAID Applicants EXPRESS OR NORMAL
       $next_page = "#";
-    } elseif (( $check1 == "not_paid" ) && (( $check2 == "express" ) || ( $check2 == "normal" ))){
+    } elseif (( $check1 == "not_paid" ) && (( $check2 == "express" ) ||
+                ( $check2 == "normal" ))){
       //for NOT_PAID Applicants EXPRESS OR NORMAL
       $next_page = "#";
-    } elseif (( $check2 == "not_paid" ) && (( $check1 == "express" ) || ( $check1 == "normal" ))){
+    } elseif (( $check2 == "not_paid" ) && (( $check1 == "express" ) ||
+                ( $check1 == "normal" ))){
       //for EXPRESS OR NORMAL Applicants NOT_PAID
       $next_page = "#";
-    } elseif (( $check2 == "paid" ) && (( $check1 == "express" ) || ( $check1 == "normal" ))){
+    } elseif (( $check2 == "paid" ) && (( $check1 == "express" ) ||
+                ( $check1 == "normal" ))){
       //for EXPRESS OR NORMAL Applicants NOT_PAID
       $next_page = "#";
-    } elseif (( $check2 == "Null" ) && (( $check1 == "express" ) || ( $check1 == "normal" ))){
+    } elseif (( $check2 == "Null" ) && (( $check1 == "express" ) ||
+                ( $check1 == "normal" ))){
       //for EXPRESS OR NORMAL Applicants
       $next_page = "create";
     } elseif (( $check1 == "paid" ) && ( $check2 == "Null" )){
@@ -133,9 +137,10 @@ class Applicant extends DatabaseObject{
     } elseif (( $check1 == "not_paid" ) && ( $check2 == "Null" )){
       //for  NOT_PAID Applicants
       $next_page = "#";
-    } elseif ((( $check1 == "ems" ) || ( $check1 == "pick_up" ) || ( $check1 == "email" )) && ( $check2 == "Null" )){
+    } elseif ((( $check1 == "ems" ) || ( $check1 == "pick_up" ) ||
+            ( $check1 == "email" )) && ( $check2 == "Null" )){
       //for various delivery types
-      $next_page = "#";
+      $next_page = "send";
     } else {
       //default
       $next_page = "#";
