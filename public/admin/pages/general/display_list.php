@@ -1,6 +1,5 @@
 <?php session_start();
 require_once('../../../../includes/initialize.php');
-//if(!$session->is_logged_in()){redirect_to('login.php');}
 //values passed  for check {paid or not_paid} {normal or express}
 //{ems or pick_up or email}
 $check1 = isset($_GET['query1'])?$_GET['query1']:'Null';
