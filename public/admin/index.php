@@ -1,5 +1,6 @@
-<?php include('../../includes/page_loader.php'); ?>
+<?php include('../../includes/page_loader.php');
 //if(!$session->is_logged_in()){redirect_to('login.php');}
+?>
 <?php include('layout/header.php'); ?>
 <body>
  <!-- container section start -->
