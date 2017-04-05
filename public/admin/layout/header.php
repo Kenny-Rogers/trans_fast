@@ -7,7 +7,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Creative - Bootstrap Admin Template</title>
+    <title>Trans Fast <?php echo "{$page_title}"; ?></title>
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -34,10 +34,4 @@
 	<link href="../css/xcharts.min.css" rel=" stylesheet">
 	<link href="../css/jquery-ui-1.10.4.min.css" rel="stylesheet">
   <script src="../js/javascripts.js"></script>
-    <!-- =======================================================
-        Theme Name: NiceAdmin
-        Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-        Author: BootstrapMade
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->
   </head>
