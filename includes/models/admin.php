@@ -3,8 +3,8 @@
 class Admin{
   protected $table_name = "admin";
   protected $db_fields =
-    array("user_id", "first_name", "last_name", "password", "email");
-  private $user_id;
+    array("id", "first_name", "last_name", "password", "email");
+  private $id;
   private $first_name;
   private $last_name;
   private $password;
