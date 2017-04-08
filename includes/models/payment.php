@@ -1,5 +1,5 @@
 <?php
-//class for Recipients
+//class for payment
 class Payment extends DatabaseObject{
   protected static $table_name = "payment";
   protected static $db_fields =
