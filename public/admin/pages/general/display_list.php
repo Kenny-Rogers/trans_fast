@@ -22,21 +22,27 @@ $applicants = Applicant::find_by_sql($sql);
         <th>#</th>
         <th>Name</th>
         <th>Date Applied</th>
-        <th>Delivery Point</th>
+        <th>To Be Delivered To</th>
+        <th>Payment Status</th>
         <?php if (($display == "process_order") || ($display == "deliver")){ ?>
         <th>Action</th>
         <?php } ?>
       </tr>
     </thead>
     <tbody>
-    <?php foreach ($applicants as $applicant ) { ?>
+    <?php foreach ($applicants as $applicant ) {
+          //have to set the payment info
+            $applicant->payment = Payment::find_by_id("paid_by={$applicant->Id}");
+            $applicant->recipient = Recipient::find_by_id("appl_id={$applicant->Id}");
+      ?>
       <tr>
         <td><?php echo $applicant->Id;  ?></td>
         <td><?php echo $applicant->full_name(); ?></td>
         <td><?php echo $applicant->find_application_date(); ?></td>
-        <td><?php echo $applicant->find_date_delivered(); ?></td>
+        <td><?php echo $applicant->recipient->name(); ?></td>
+        <td><?php echo $applicant->has_paid(); ?></td>
         <?php if (($display == "process_order") || ($display == "deliver")){ ?>
-        <td><a href="<?php echo "?page={$next_page}&id={$applicant->Id}"?>">
+        <td><a href="<?php echo $applicant->link_state($next_page); ?>">
           Process</a></td>
         <?php } ?>
       </tr>
