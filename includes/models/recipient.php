@@ -1,6 +1,6 @@
 <?php
 //class for Recipients
-class Recipient{
+class Recipient extends DatabaseObject{
   protected static $table_name = "recipient";
   protected static $db_fields =
     array("receip_id", "appl_id", "email", "name", "mode_of_delivery", "telephone",
@@ -19,6 +19,8 @@ class Recipient{
   protected $fax;
   protected $status;
 
-
+  public function name(){
+    return $this->name;
+  }
 }
 ?>
