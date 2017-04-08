@@ -8,12 +8,12 @@
                   <span>Dashboard</span>
               </a>
           </li>
-          <li <?php echo $class_v; ?>>
+          <!--li <?php //echo $class_v; ?>>
               <a class="" href="?page=view_order">
                   <i class="fa fa-file" aria-hidden="true"></i>
                   <span>View order</span>
               </a>
-          </li>
+          </li-->
           <li <?php echo $class_p; ?>>
               <a class="" href="?page=process_order">
                   <i class="fa fa-tasks" aria-hidden="true"></i>
