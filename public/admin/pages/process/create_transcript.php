@@ -9,8 +9,13 @@ $admin_id = '1';
 $new_transcript = Transcript::make($file_name, $id, $admin_id);
 if ($new_transcript && $new_transcript->save()) {
   //transcript record saved
-  $message = "Transcript Creation Successfully.";
-  $class = "success";
+  //find applicant record and update the status of the application
+  $applicant = Applicant::find_by_id("id={$id}");
+  $applicant->update_status("Processed");
+  if ($applicant->save()) {
+    $message = "Transcript Creation Successfully.";
+    $class = "success";
+  }
 } else {
   //transcript record not saved
   $message = "Transcript Creation Unsuccessfully.";
