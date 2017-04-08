@@ -32,11 +32,11 @@ $applicants = Applicant::find_by_sql($sql);
     <tbody>
     <?php foreach ($applicants as $applicant ) {
           //have to set the payment info
-            $applicant->payment = Payment::find_by_id("paid_by={$applicant->Id}");
-            $applicant->recipient = Recipient::find_by_id("appl_id={$applicant->Id}");
+            $applicant->payment = Payment::find_by_id("paid_by={$applicant->id}");
+            $applicant->recipient = Recipient::find_by_id("appl_id={$applicant->id}");
       ?>
       <tr>
-        <td><?php echo $applicant->Id;  ?></td>
+        <td><?php echo $applicant->id;  ?></td>
         <td><?php echo $applicant->full_name(); ?></td>
         <td><?php echo $applicant->find_application_date(); ?></td>
         <td><?php echo $applicant->recipient->name(); ?></td>
