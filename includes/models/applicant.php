@@ -1,20 +1,19 @@
 <?php
 //applicant Info
 class Applicant extends DatabaseObject{
-  protected static $table_name = "admin";
+  protected static $table_name = "applicant";
   protected static $db_fields =
-    array("Id", "school_id", "first_name", "last_name", "password", "email",
-          "telephone", "mode_of_delivery", "pace_of_processing", "date_applied",
+    array("id", "school_id", "first_name", "last_name", "pin", "email",
+          "telephone", "pace_of_processing", "date_applied",
           "date_delivered", "status");
-  public $Id;
+  public $id;
   protected $school_id;
   protected $first_name;
   protected $last_name;
   protected $middle_name;
-  protected $password;
+  protected $pin;
   protected $email;
   protected $telephone;
-  protected $mode_of_delivery;
   protected $pace_of_processing;
   protected $date_applied;
   protected $date_delivered;
@@ -83,10 +82,15 @@ class Applicant extends DatabaseObject{
     //determines where an application PROCESS link go
     //based on payment information
     if ($this->has_paid() == "Paid") {
-      return "?page={$next_page}&id={$this->Id}";
+      return "?page={$next_page}&id={$this->id}";
     } else {
       return "#";
     }
+  }
+
+  public function update_status($new_status=""){
+    //update the status of an application
+    $this->status = $new_status;
   }
 
   public static function get_list_by($check1 = "", $check2 = ""){
