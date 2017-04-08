@@ -15,12 +15,16 @@ function redirect_to($location=NULL){
   }
 }
 
-function output_message($message=""){
+function output_message($message="", $class=""){
   //displays a paragraphed text
-  if(!empty($message)){
-    return "<p class=\"message\">{$message}</p>";
-  }else{
-    return "";
+  if(!empty($message)&& $class="success"){
+    echo "<div class='col-sm-offset-2 col-sm-6 alert alert-success'>
+            {$message}</div>";
+  } elseif(!empty($message)&& $class="fail"){
+      echo "<div class='col-sm-offset-2 col-sm-6 alert alert-danger'>
+              {$message}</div>";
+  } else {
+    echo "";
   }
 }
 
@@ -45,4 +49,5 @@ function datetime_to_text($datetime=""){
   $unixdatetime=strtotime($datatime);
   return Strftime("%B %d, %Y at %I:%M %p", $unixdatetime);
 }
+
 ?>
