@@ -5,16 +5,22 @@
   $display = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
   $_SESSION['display'] = $display;
   $view = "";
+  $page_title = "";
+  $title_class = "";
+  $class_p = "";
+  $class_g = "";
+  $class_d = "";
+  $class_da = "";
 
   switch ($display) {
 
-    case 'view_order':
-      //display display_order page
-      $view = "pages/view_order/display_orders.php";
-      $page_title = "View Order";
-      $title_class = "fa fa-file";
-      $class_v = "class='active'";
-      break;
+    // case 'view_order':
+    //   //display display_order page
+    //   $view = "pages/view_order/display_orders.php";
+    //   $page_title = "View Order";
+    //   $title_class = "fa fa-file";
+    //   $class_v = "class='active'";
+    //   break;
 
     case 'process_order':
       //display process_order page
