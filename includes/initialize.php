@@ -12,6 +12,8 @@ define('SITE_ROOT', DS.'var'.DS.'www'.DS.'html'.DS.'trans_fast');
 //the libraries
 defined('LIB_PATH')?null:define('LIB_PATH', SITE_ROOT.DS.'includes');
 
+//setting the default timezone
+date_default_timezone_set('Etc/UTC');
 
 //load the config file first
 require_once(LIB_PATH.DS."config.php");
@@ -24,6 +26,7 @@ require_once(LIB_PATH.DS.'functions.php');
 //require_once(LIB_PATH.DS.'session.php');
 require_once(LIB_PATH.DS.'database.php');
 require_once(LIB_PATH.DS.'database_object.php');
+require_once(LIB_PATH.DS.'PHPMailer'.DS.'PHPMailerAutoload.php');
 // require_once(LIB_PATH.DS.'log.php');
 // require_once(LIB_PATH.DS.'pagination.php');
 
@@ -32,6 +35,7 @@ require_once(LIB_PATH.DS.'models'.DS.'applicant.php');
 require_once(LIB_PATH.DS.'models'.DS.'recipient.php');
 require_once(LIB_PATH.DS.'models'.DS.'payment.php');
 require_once(LIB_PATH.DS.'models'.DS.'transcript.php');
+require_once(LIB_PATH.DS.'models'.DS.'email.php');
 require_once(LIB_PATH.DS.'models'.DS.'message.php');
 // require_once(LIB_PATH.DS.'user.php');
 // require_once(LIB_PATH.DS.'photograph.php');
