@@ -64,10 +64,10 @@ class DatabaseObject{
     return self::find_by_sql("SELECT * FROM ".static::$table_name);
   }
 
-  public static function find_by_id($id=0){
+  public static function find_by_id($id=""){
     //returns array of a record by id
     global $database;
-    $result_array=self::find_by_sql("SELECT * FROM ".static::$table_name." WHERE id=".$database->escape_value($id)." LIMIT 1");
+    $result_array=self::find_by_sql("SELECT * FROM ".static::$table_name." WHERE ".$database->escape_value($id)." LIMIT 1");
     //returns the first element in the array
     return !empty($result_array)?array_shift($result_array):false;
   }
