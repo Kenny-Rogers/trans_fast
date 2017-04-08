@@ -22,7 +22,7 @@ class Applicant extends DatabaseObject{
   //applicant related object
   public $recipient;
   public $payment;
-  private $transcript;
+  public $transcript;
 
   public static function authenticate($email="", $password=""){
     //validates username and password
