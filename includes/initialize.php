@@ -31,6 +31,7 @@ require_once(LIB_PATH.DS.'database_object.php');
 require_once(LIB_PATH.DS.'models'.DS.'applicant.php');
 require_once(LIB_PATH.DS.'models'.DS.'recipient.php');
 require_once(LIB_PATH.DS.'models'.DS.'payment.php');
+require_once(LIB_PATH.DS.'models'.DS.'transcript.php');
 require_once(LIB_PATH.DS.'models'.DS.'message.php');
 // require_once(LIB_PATH.DS.'user.php');
 // require_once(LIB_PATH.DS.'photograph.php');
