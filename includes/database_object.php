@@ -37,7 +37,6 @@ class DatabaseObject{
     $sql="UPDATE ".static::$table_name." SET ";
     $sql.=join(", ",$attribute_pairs);
     $sql.=" WHERE id=".$database->escape_value($this->id);
-    echo $sql;
     $database->query($sql);
     return($database->affected_rows()==1)? true : false;
   }
