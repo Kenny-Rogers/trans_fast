@@ -96,6 +96,15 @@ class DatabaseObject{
     return array_shift($row);
   }
 
+  public static function count_all_with($check=""){
+    //returns the count of the records in a table
+    global $database;
+    $sql="SELECT COUNT(*) FROM ".static::$table_name." WHERE {$check}";
+    $result_set=$database->query($sql);
+    $row=$database->fetch_array($result_set);
+    return array_shift($row);
+  }
+
   private static function instantiate($record){
     $object=new static;
     //sets all the properties of a record from the database to an object of the
