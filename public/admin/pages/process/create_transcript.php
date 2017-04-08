@@ -1,13 +1,29 @@
 <?php
 //this page creates the Transcript
-//getting the id
+//getting neccessary info to generate transcript
 $id = isset($_GET['id'])? $_GET['id'] :'-1';
-$message = "Transcript Successfully Created.";
-$source = "../transcripts/test.pdf";
-?>
+$file_name = "test.pdf";
+$admin_id = '1';
 
-<div class='alert alert-success'>
-  	  <?php echo $message; ?>
+//creating a  new transcript
+$new_transcript = Transcript::make($file_name, $id, $admin_id);
+if ($new_transcript && $new_transcript->save()) {
+  //transcript record saved
+  $message = "Transcript Creation Successfully.";
+  $class = "success";
+} else {
+  //transcript record not saved
+  $message = "Transcript Creation Unsuccessfully.";
+  $class = "fail";
+}
+
+$source = $new_transcript->get_trans_file();
+?>
+<div class="row">
+    <?php output_message($message, $class)?>
+  <div class="col-sm-4">
+      <a  class="btn btn-success" href="?page=send<?php echo "&id={$id}"; ?>">Deliver Transcript</a>
+  </div>
 </div>
 <div class="row">
   <div class="col-sm-offset-1 col-sm-10">
